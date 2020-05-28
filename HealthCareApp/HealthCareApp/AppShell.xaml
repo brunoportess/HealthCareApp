@@ -6,21 +6,22 @@
        mc:Ignorable="d"
        xmlns:local="clr-namespace:HealthCareApp.Views"
        Title="HealthCareApp"
-       x:Class="HealthCareApp.AppShell">
+       x:Class="HealthCareApp.AppShell"
+       Shell.NavBarIsVisible="False">
 
     <!-- 
         Styles and Resources 
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryColor}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PrimaryColor}" />
                 <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
                 <Setter Property="Shell.TabBarTitleColor" Value="White"/>
@@ -31,11 +32,21 @@
 
     <!-- Your Pages -->
     <TabBar>
-        <Tab Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <Tab Title="Início" Icon="ic_home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" 
+                          Route="HomeViewModel"/>
         </Tab>
-        <Tab Title="About" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
+        <Tab Title="Agendar" Icon="ic_calendar.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SchedulePage}"
+                          Route="ScheduleViewModel"/>
+        </Tab>
+        <Tab Title="Consultas" Icon="ic_list.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MyAppointmentsPage}" 
+                          Route="MyAppointmentsViewModel"/>
+        </Tab>
+        <Tab Title="Carteirinha" Icon="ic_card.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MyCardPage}"
+                          Route="MyCardViewModel"/>
         </Tab>
     </TabBar>
 

@@ -1,8 +1,8 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using HealthCareApp.Helpers;
 using HealthCareApp.Services;
-using HealthCareApp.Views;
+using HealthCareApp.ViewModels;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace HealthCareApp
 {
@@ -13,12 +13,23 @@ namespace HealthCareApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
+            var nav = NavigationService.Current;
+            var lastLocation = Preferences.Get("LastKnownUrl", string.Empty);
+            await nav.GoToAsync(new ShellNavigationState(nameof(LoginViewModel)));
+            /*if (!Authentication.IsAuthenticated())
+            {
+                await nav.GoToAsync(new ShellNavigationState(nameof(LoginViewModel)));
+            }
+
+            if (string.IsNullOrEmpty(lastLocation))
+                return;
+            
+            await nav.GoToAsync(new ShellNavigationState(lastLocation));*/
         }
 
         protected override void OnSleep()

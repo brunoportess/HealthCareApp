@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HealthCareApp.Views.HomePage">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="doctor_laptop.jpg"  Grid.Row="0" Grid.Column="0" Aspect="AspectFill" ></Image>
+
+
+
+            <FlexLayout Grid.Row="1" Grid.Column="0" Direction="Row" Wrap="Wrap" JustifyContent="SpaceAround" AlignContent="SpaceAround" AlignItems="Center">
+                <StackLayout FlexLayout.Basis="33%"  VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+                    <Frame CornerRadius="100" 
+                       HorizontalOptions="Center"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Padding="0">
+                        <Image Source="department.jpg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="DEPARTAMENTOS" HorizontalOptions="Center"></Label>
+                </StackLayout>
+
+                <StackLayout FlexLayout.Basis="33%"  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame CornerRadius="100" 
+                       HorizontalOptions="Center"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Padding="0">
+                        <Image Source="schedule.jpg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="CONSULTAS" HorizontalOptions="Center"></Label>
+                </StackLayout>
+
+                <StackLayout FlexLayout.Basis="33%"  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame CornerRadius="100" 
+                       HorizontalOptions="Center"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Padding="0">
+                        <Image Source="drugs.jpg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="MEDICAMENTOS" HorizontalOptions="Center"></Label>
+                </StackLayout>
+
+                <StackLayout FlexLayout.Basis="50%"  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame CornerRadius="100" 
+                       HorizontalOptions="Center"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Padding="0">
+                        <Image Source="lab_result.jpg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="LABORATORIAL" HorizontalOptions="Center"></Label>
+                </StackLayout>
+
+                <StackLayout FlexLayout.Basis="50%"  VerticalOptions="Center" HorizontalOptions="Center">
+                    <Frame CornerRadius="100" 
+                       HorizontalOptions="Center"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Padding="0">
+                        <Image Source="department.jpg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Label Text="MEU PLANO" HorizontalOptions="Center"></Label>
+                </StackLayout>
+            </FlexLayout>
+
+            <Button 
+                TextColor="#FFFFFF"
+                BackgroundColor="{StaticResource AccentColor}" 
+                CornerRadius="10" 
+                HorizontalOptions="Center" 
+                Grid.Column="0" 
+                Grid.Row="1" 
+                FontAttributes="Bold"
+                Padding="20,0"
+                VerticalOptions="Start" 
+                Margin="0,-30,0,0" 
+                Text="Faça uma pergunta">
+            </Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
